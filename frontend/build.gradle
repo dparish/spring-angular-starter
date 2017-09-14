@@ -26,3 +26,9 @@ task buildApp(type: NodeTask) {
     script = ng
     args = ["build", "--output-path=${backendTarget}"]
 }
+
+clean.doFirst {
+    delete "dist"
+    delete "tmp"
+    delete "src/app/model/generated.d.ts"
+}

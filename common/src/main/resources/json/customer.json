@@ -22,7 +22,7 @@
     "zip": {
       "type": "string"
     },
-    "birthdate": {
+    "birthDate": {
       "type": "string",
       "format":"date-time"
     }
