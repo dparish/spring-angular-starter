@@ -1,2 +1,28 @@
+plugins {
+    id "com.moowork.node" version "1.2.0"
+}
+
 apply plugin: 'base'
 
+ext {
+    backendTarget = project(":backend").getProjectDir().getPath() + "/src/main/resources/public"
+    ng = file("${projectDir.path}/node_modules/@angular/cli/bin/ng")
+}
+
+task serve(type: NodeTask) {
+    script = ng
+    args = ['serve']
+}
+
+task buildApp(type: NodeTask) {
+    description = "Runs the angular build and outputs to the server."
+    group = "Build"
+    dependsOn npmInstall
+    inputs.dir file("src")
+    inputs.dir file("node_modules")
+    inputs.dir file(".angular-cli.json")
+    inputs.dir file("package.json")
+    outputs.dir ("${backendTarget}")
+    script = ng
+    args = ["build", "--output-path=${backendTarget}"]
+}
