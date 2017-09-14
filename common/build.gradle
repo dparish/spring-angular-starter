@@ -55,8 +55,8 @@ jsonSchema2Pojo {
     serializable = false
     includeAccessors = true
     includeDynamicAccessors = false
-    dateType = "java.time.LocalDate"
-    dateTimeType = "java.time.LocalDateTime"
+    dateType = "java.util.Date"
+    dateTimeType = "java.util.Date"
 }
 
 generateTypeScript {
