@@ -1,3 +1,4 @@
 include 'backend'
+include 'common'
 include 'frontend'
 rootProject.name = 'spring-angular-starter'

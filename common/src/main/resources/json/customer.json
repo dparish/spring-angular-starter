@@ -1,0 +1,30 @@
+{
+  "id": "/Customer",
+  "properties": {
+    "id": {
+      "type":"integer"
+    },
+    "firstName": {
+      "type":"string"
+    },
+    "lastName": {
+      "type":"string"
+    },
+    "street": {
+      "type":"string"
+    },
+    "city": {
+      "type":"string"
+    },
+    "state": {
+      "type":"string"
+    },
+    "zip": {
+      "type": "string"
+    },
+    "birthdate": {
+      "type": "string",
+      "format":"date-time"
+    }
+  }
+}
