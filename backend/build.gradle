@@ -20,8 +20,9 @@ repositories {
 }
 
 dependencies {
+    compile project(":common")
     compile("org.springframework.boot:spring-boot-starter-web")
-    project(":common")
+    compile ("com.github.javafaker:javafaker:${javaFakerVersion}")
     testCompile("org.springframework.boot:spring-boot-starter-test")
 }
 
