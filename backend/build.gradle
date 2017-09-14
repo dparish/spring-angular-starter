@@ -22,6 +22,7 @@ repositories {
 dependencies {
     compile project(":common")
     compile("org.springframework.boot:spring-boot-starter-web")
+    compile("org.springframework.boot:spring-boot-devtools")
     compile ("com.github.javafaker:javafaker:${javaFakerVersion}")
     testCompile("org.springframework.boot:spring-boot-starter-test")
 }
@@ -32,4 +33,8 @@ checkstyle {
 
 processResources {
     dependsOn ":frontend:buildApp"
+}
+
+bootRun {
+    sourceResources sourceSets.main
 }

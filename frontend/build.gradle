@@ -15,8 +15,6 @@ task serve(type: NodeTask) {
 }
 
 task buildApp(type: NodeTask) {
-    description = "Runs the angular build and outputs to the server."
-    group = "Build"
     dependsOn npmInstall
     inputs.dir file("src")
     inputs.dir file("node_modules")
@@ -25,6 +23,12 @@ task buildApp(type: NodeTask) {
     outputs.dir ("${backendTarget}")
     script = ng
     args = ["build", "--output-path=${backendTarget}"]
+}
+
+task watch(type: NodeTask) {
+    dependsOn npmInstall
+    script = ng
+    args = ["build", "--watch", "--output-path=${backendTarget}"]
 }
 
 clean.doFirst {
