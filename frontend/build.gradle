@@ -31,8 +31,23 @@ task watch(type: NodeTask) {
     args = ["build", "--watch", "--output-path=${backendTarget}"]
 }
 
+task lint(type: NodeTask) {
+    dependsOn npmInstall
+    script = ng
+    args = ["lint", "--type-check"]
+}
+
+task test(type: NodeTask) {
+    dependsOn npmInstall
+    script = ng
+    args = ["test", "--single-run"]
+}
+
 clean.doFirst {
     delete "dist"
     delete "tmp"
     delete "src/app/model/generated.d.ts"
 }
+
+check.dependsOn lint
+check.dependsOn test

@@ -5,6 +5,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { CustomerListComponent } from './customer-list/customer-list.component';
 import {CustomerService} from './customer.service';
+import {AppRoutingModule} from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -12,6 +13,7 @@ import {CustomerService} from './customer.service';
     CustomerListComponent
   ],
   imports: [
+    AppRoutingModule,
     BrowserModule,
     HttpModule
   ],

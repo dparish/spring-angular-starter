@@ -14,7 +14,6 @@ export class CustomerListComponent implements OnInit {
   constructor(private customerService: CustomerService) { }
 
   ngOnInit() {
-    console.log('in nginit');
     this.customerService.getCustomers().subscribe((customers: Customer[]) => this.customers = customers);
   }
 
